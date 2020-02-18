@@ -1,17 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-button slot="start" (click)="this.menu.open('custom')">
+        <ion-icon name="menu" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons >
+    <ion-title class="ion-text-center">
       Tab 1
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content >
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
