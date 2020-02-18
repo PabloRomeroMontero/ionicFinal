@@ -3,15 +3,17 @@
     <ion-title>
       Tab 2
     </ion-title>
+    <ion-searchbar
+            [(ngModel)]="miBuscador"
+            placeholder="buscar"
+            (ionChange)="buscar($event)"
+            autocomplete="on">
+    </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let hola of palabras">{{hola}}</ion-item>
+  </ion-list>
 </ion-content>

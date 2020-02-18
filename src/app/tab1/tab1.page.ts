@@ -10,4 +10,11 @@ export class Tab1Page {
 
   constructor(private menu: MenuController) {}
 
+
+
+  ionViewWillEnter() {
+    this.menu.enable(true, 'custom');
+  }
+
+
 }

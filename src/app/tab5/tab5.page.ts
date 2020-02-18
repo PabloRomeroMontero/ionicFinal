@@ -21,6 +21,10 @@ export class Tab5Page implements OnInit, OnDestroy {
         // this.menu.enable(false, 'custom');
     }
 
+    ionViewWillEnter() {
+        this.menu.enable(false, 'custom');
+    }
+
     ngOnDestroy(): void {
         this.menu.enable(true, 'custom');
     }
