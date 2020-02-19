@@ -11,25 +11,27 @@ import {AppComponent} from './app.component';
 
 import * as firebase from 'firebase';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import { environment } from 'src/environments/environment';
+import {environment} from 'src/environments/environment';
 import {FirebaseService} from './services/firebase.service';
 import {ReactiveFormsModule} from '@angular/forms';
+import {Facebook} from '@ionic-native/facebook/ngx';
+import {AngularFireModule} from '@angular/fire';
 
 firebase.initializeApp(environment.firebase);
 
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireAuthModule],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireAuthModule, AngularFireModule.initializeApp(environment.firebase)],
     providers: [
         StatusBar,
         SplashScreen,
         FirebaseService,
         ReactiveFormsModule,
+        Facebook,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
-    exports: [
-    ],
+    exports: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

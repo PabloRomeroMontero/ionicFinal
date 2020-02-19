@@ -1,3 +1,5 @@
+<!--https://www.freakyjolly.com/ionic-4-firebase-login-registration-by-email-and-password/-->
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Login</ion-title>
@@ -32,7 +34,7 @@
     </div>
 
     <ion-button  class="submit-btn" type="submit"  [disabled]="!validations_form.valid">Log In</ion-button>
-    <ion-button   >Log In with Facebook</ion-button>
+    <ion-button   expand="full" color="primary" (click)="loginFacebook()">Log In with Facebook <ion-icon name="Facebook"></ion-icon></ion-button>
 
     <label class="error-message">{{errorMessage}}</label>
   </form>
