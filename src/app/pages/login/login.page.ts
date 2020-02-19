@@ -55,20 +55,20 @@ export class LoginPage implements OnInit {
 
   async loginFacebook() {
 
-      this.fb.login(['public_profile', 'user_friends', 'email'])
-          .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))
-          .catch(e => console.log('Error logging into Facebook', e));
-
-
-      this.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);
-    // this.fb.login(['email'])
-    //     .then((response: FacebookLoginResponse) => {
-    //       this.onLoginSuccess(response);
-    //       console.log(response.authResponse.accessToken);
-    //     }).catch((error) => {
-    //   console.log(error);
-    //   alert('error:' + error);
-    // });
+      // this.fb.login(['public_profile', 'user_friends', 'email'])
+      //     .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))
+      //     .catch(e => console.log('Error logging into Facebook', e));
+      //
+      //
+      // this.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);
+    this.fb.login(['email'])
+        .then((response: FacebookLoginResponse) => {
+          this.onLoginSuccess(response);
+          console.log(response.authResponse.accessToken);
+        }).catch((error) => {
+      console.log(error);
+      alert('error:' + error);
+    });
   }
   onLoginSuccess(res: FacebookLoginResponse) {
     // const { token, secret } = res;
